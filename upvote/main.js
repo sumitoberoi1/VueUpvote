@@ -25,7 +25,7 @@ const submissionComponent = {
         </div>
       </div>
       <div class="media-right">
-        <span class="icon is-small" v-on:click="upvote(submission.id)">
+        <span class="icon is-small" @click="upvote(submission.id)">
           <i class="fa fa-chevron-up"></i>
           <strong class="has-text-info">{{ submission.votes }}</strong>
         </span>
@@ -34,7 +34,7 @@ const submissionComponent = {
     methods: {
         upvote(submissionId) {
             const submission = this.submissions.find(submission => submission.id === submissionId);
-            submission.votes++;
+            submission.votes += 1;
         }
     },
     props:['submission','submissions']
